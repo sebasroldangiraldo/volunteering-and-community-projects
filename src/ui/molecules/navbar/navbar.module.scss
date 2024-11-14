@@ -1,0 +1,40 @@
+@import "../../../styles/variables.scss";
+
+.navbar {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+        color: $blue-color;
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        font-size: 0.9rem;
+
+        .link {
+            color: $black-color;
+            text-decoration: none;
+            cursor: pointer;
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+
+        .register {
+            padding: 0.5rem 1.2rem;
+            background-color: $black-color;
+            color: $white-color;
+            border-radius: 0.4rem;
+        }
+    }
+
+
+
+
+}
