@@ -1,0 +1,26 @@
+@import "../../../styles/variables.scss";
+
+.layout {
+    display: flex;
+    height: 100vh;
+
+    .aside {
+        background-color: $white-color;
+        width: 15%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        z-index: 1000; 
+        border-right: 0.05rem solid $light-grey-color;
+    }
+
+    .container {
+        background-color: $grey-backgound-color;
+        margin-left: 15%; 
+        width: calc(100% - 15%); 
+        overflow-y: auto; 
+    }
+}

@@ -1,0 +1,34 @@
+@import "../../../styles/variables.scss";
+
+.header {
+    width: 100%;
+    height: 4.5rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    background-color: $white-color;
+    justify-content: space-between;
+
+    .options {
+        display: flex;
+        gap: 1rem;
+
+        .button {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            gap: 0.5rem;
+            color: $white-color;
+            background-color: $black-color;
+            border: none;
+            font-family: var(--font-principal);
+            font-size: 0.9rem;
+            border-radius: 0.4rem;
+            cursor: pointer;
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+}

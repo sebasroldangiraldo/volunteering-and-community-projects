@@ -1,0 +1,18 @@
+@import "../../../styles/variables.scss";
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .image {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+    }
+
+    .text {
+        font-size: 0.9rem;
+        font-weight: 300;
+    }
+}
