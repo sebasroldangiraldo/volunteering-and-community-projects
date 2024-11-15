@@ -42,8 +42,13 @@
                 padding: 0.75rem;
             }
 
-            .start, .end, .status, .organizer, .actionsTh {
+            .start, .end, .status, .actionsTh {
                 width: 10%;
+                padding: 0.75rem;
+            }
+
+            .organizer {
+                width: 15%;
                 padding: 0.75rem;
             }
         }

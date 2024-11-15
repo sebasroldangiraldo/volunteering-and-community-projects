@@ -94,7 +94,7 @@ export const LoginForm = () => {
                 label="Correo Electrónico:"
                 name="email"
                 error={errors.email}
-                placeholder="Ingresa tu correo"
+                placeholder="Ingresa tu correo electrónico"
             />
 
             <FormField<ILoginRequest>

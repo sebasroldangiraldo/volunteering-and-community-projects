@@ -26,7 +26,7 @@ const ProjectsTemplate: React.FC<ProjectsTemplateProps> = ({ data }) => {
             const response = await fetch('/api/projects/download');
 
             if (!response.ok) {
-                throw new Error('No se pudo descargar el archivo');
+                throw new Error('Error al descargar el archivo');
             };
 
             const blob = await response.blob();
@@ -34,7 +34,7 @@ const ProjectsTemplate: React.FC<ProjectsTemplateProps> = ({ data }) => {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'reporte-proyecto.xlsx';
+            a.download = 'reporte-volunteering-and-community-projects.xlsx';
             document.body.appendChild(a);
             a.click();
             a.remove();

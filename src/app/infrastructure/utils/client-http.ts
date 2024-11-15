@@ -74,6 +74,18 @@ export class ClientHttp {
         return await response.blob();
     };
 
+    async register<T, B>(url : string, body : B) : Promise<T> {
+
+        const formData = body as FormData;
+
+        const response = await fetch(`${this.baseUrl}/${url}`, {
+            method : "POST",
+            body : formData
+        });
+
+        return this.handleResponse(response);
+    };
+
     private async getHeader() {
 
         const session = await getServerSession(authOptions) as CustomSession;
