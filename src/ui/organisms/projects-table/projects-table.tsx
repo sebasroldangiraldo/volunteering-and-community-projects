@@ -5,9 +5,11 @@ import styles from "./projects-table.module.scss";
 
 interface ProjectsTableProps {
     data: IGetProjectsResponse;
+    onEdit: (id : number) => void;
+    onDelete: (id : number) => void;
 };
 
-const ProjectsTable: React.FC<ProjectsTableProps> = ({ data }) => {
+const ProjectsTable: React.FC<ProjectsTableProps> = ({ data, onEdit, onDelete}) => {
 
     return (
         <div className={styles.tableContainer}>
@@ -41,8 +43,8 @@ const ProjectsTable: React.FC<ProjectsTableProps> = ({ data }) => {
                             <td>{project.organizer.name}</td>
                             <td>
                                 <div className={styles.actions}>
-                                    <Button type="button" className={styles.edit}>Editar</Button>
-                                    <Button type="button" className={styles.delete}>Eliminar</Button>
+                                    <Button type="button" className={styles.edit} onClick={() => onEdit(project.id)} >Editar</Button>
+                                    <Button type="button" className={styles.delete} onClick={() => onDelete(project.id)}>Eliminar</Button>
                                 </div>
                             </td>
                         </tr>

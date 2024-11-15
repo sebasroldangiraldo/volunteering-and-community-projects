@@ -40,7 +40,7 @@ export class ClientHttp {
         const headers = await this.getHeader();
         const response = await fetch(`${this.baseUrl}/${url}`, {
             headers : headers,
-            method : "PUT",
+            method : "PATCH",
             body : JSON.stringify(body)
         });
 
@@ -54,6 +54,24 @@ export class ClientHttp {
             headers : headers,
             method : "DELETE"
         });
+    };
+
+    async file(url: string): Promise<Blob> {
+
+        const session = await getServerSession(authOptions) as CustomSession;
+        const token = session?.user?.token;
+
+        const response = await fetch(`${this.baseUrl}/${url}`, {
+            headers: {"Authorization" : `Bearer ${token}`},
+            method: "GET",
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw errorData;
+        };
+
+        return await response.blob();
     };
 
     private async getHeader() {
