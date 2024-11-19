@@ -1,6 +1,7 @@
 'use client';
 
 import { IGetProjectsResponse } from "@/app/core/application/dto/projects/get/projects-response.dto";
+import CardsPanel from "@/ui/organisms/cards-panel/cards-panel";
 import Header from "@/ui/organisms/header/header"
 import Modal from "@/ui/organisms/modal/modal";
 import Pagination from "@/ui/organisms/pagination/pagination";
@@ -8,6 +9,7 @@ import { ProjectsForm } from "@/ui/organisms/projects-form/projects-form";
 import ProjectsTable from "@/ui/organisms/projects-table/projects-table";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import styles from "./projects-template.module.scss";
 
 interface ProjectsTemplateProps {
     data: IGetProjectsResponse;
@@ -85,8 +87,14 @@ const ProjectsTemplate: React.FC<ProjectsTemplateProps> = ({ data }) => {
                 <ProjectsForm toggleModal={toggleModal} projectID={projectID}></ProjectsForm>
             </Modal>
 
+            <div className={styles.container}>
+
+            <CardsPanel data={data}></CardsPanel>
 
             <ProjectsTable data={data} onEdit={handleEdit} onDelete={handleDelete}></ProjectsTable>
+
+            </div>
+            
             <Pagination data={data}></Pagination>
         </div>
     );

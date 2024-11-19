@@ -24,7 +24,7 @@ export const generateMetadata = async ({ searchParams }: ProjectsPageProps) => {
 export default async function ProjectsPage({searchParams} : ProjectsPageProps) {
 
     const page = searchParams.page ? parseInt(searchParams.page) : 1;
-    const size = searchParams.size ? parseInt(searchParams.size) : 5;
+    const size = searchParams.size ? parseInt(searchParams.size) : 7;
 
     const data = await useProjectsService.find(page, size);
     console.log(data);
