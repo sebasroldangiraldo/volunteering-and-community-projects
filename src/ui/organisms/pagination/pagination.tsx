@@ -1,4 +1,4 @@
-import { IProjectsResponse } from "@/app/core/application/dto/projects/get/projects-response.dto";
+import { IGetProjectsResponse } from "@/app/core/application/dto/projects/get/projects-response.dto";
 import Button from "@/ui/atoms/button";
 import { icons } from "@/ui/atoms/icons";
 import { useSearchParams } from "next/navigation";
@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import styles from "./pagination.module.scss";
 
 interface PaginationProps {
-    data: IProjectsResponse;
+    data: IGetProjectsResponse;
 };
 
 const Pagination: React.FC<PaginationProps> = ({ data }) => {
